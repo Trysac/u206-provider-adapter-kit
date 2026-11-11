@@ -1,14 +1,14 @@
 # provider-adapter-kit
 
-> Uniform text-completion adapters for the Anthropic Messages, Gemini generateContent and OpenAI-compatible chat APIs over an injected HTTP transport, with one error model Python package `trysac-provider-adapter-kit`, import name `provider_adapter_kit`, MIT licensed,
-> Python >= 3.10, no runtime dependencies.
+> Uniform text-completion adapters for the Anthropic Messages, Gemini generateContent and OpenAI-compatible chat APIs over an injected HTTP transport, with one error model. Python package `trysac-provider-adapter-kit`, import name `provider_adapter_kit`, MIT licensed, Python >= 3.10, no runtime dependencies.
 
 ## Docs
 
-- [README](README.md): problem, install, usage example
-- [AGENTS](AGENTS.md): commands, folder map, conventions, limits
-- [Architecture](docs/ARCHITECTURE.md): shape of the package and its public API
-- [Testing](docs/TESTING.md): how to run and extend the tests
+- [README](README.md): problem, install, usage example, public API, limits, and errors
+- [Architecture](docs/ARCHITECTURE.md): shape of the package, public API, transport, and error model
+- [Testing](docs/TESTING.md): the visible test module and the cases it covers
+- [Security](docs/SECURITY.md): defended and not-defended threats with code limits
+- [Project](docs/PROJECT.md): objective, scope, out-of-scope, and effort metrics
 
 ## Optional
 
