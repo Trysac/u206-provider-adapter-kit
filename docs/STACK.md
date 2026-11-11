@@ -4,20 +4,15 @@
 
 | Tool | Why |
 |---|---|
-| Python >= 3.10 | Widest supported range that still allows modern typing syntax. |
-| uv | Fast, reproducible environments and builds on Windows and Linux. |
-| hatchling | Simple, standards-based build backend; no setup.py. |
-| ruff | Lint and format in one fast tool. |
-| mypy (strict) | Catches type errors before release; the package ships `py.typed`. |
-| pytest + pytest-cov | De facto standard test runner with branch coverage. |
-| gitleaks | Secret scanning locally and in CI. |
-| GitHub Actions + Dependabot | Thin CI wrapper over the local gates; weekly dependency updates. |
+| Python >= 3.10 | Required for `str | None` syntax used by the public API. |
+| Standard library | No runtime dependencies; the code uses `json`, `logging`, `math`, `re`, `dataclasses`, `typing`, `collections.abc`, and `urllib`. |
+| `py.typed` | The package ships a `py.typed` marker for type checkers. |
+| pytest | The compiled test cache is named `test_provider_adapter_kit.cpython-312-pytest-9.2.0.pyc`; tests use `pytest` and `unittest.mock` imports. |
 
 ## Discarded
 
 | Tool | Why not |
 |---|---|
-| Poetry | Slower, and uv covers the same needs with standard dependency groups. |
-| black + isort + flake8 | Replaced by ruff: one tool instead of three. |
-| tox / nox | The OS matrix lives in CI; locally a single `scripts/check.py` is enough. |
-| Shell scripts for gates | Not portable to Windows; the gates are a stdlib Python script. |
+| Official provider SDKs | They add runtime dependencies and provider-specific response and error types; this library needs byte-exact request bodies and one error model. |
+| `requests` | The default transport uses the standard library's `urllib.request`, keeping the runtime dependency set empty. |
+| Streaming and tool abstractions | The library handles plain text completion only; streaming, tools, images, retries, Vertex AI, and Bedrock auth are out of scope. |

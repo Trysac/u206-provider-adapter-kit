@@ -9,4 +9,5 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- Added provider adapter kit: uniform text-completion adapters for Anthropic Messages, Gemini generateContent, and OpenAI-compatible chat APIs with injected transport, byte-exact request bodies, and shared error model.
 - Initial project structure from the factory utility template.
